@@ -27,6 +27,7 @@
 				    gender ENUM('Male', 'Female', 'Other'),
 				    address VARCHAR(255)
      );
+![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4e3cc7ec349f5668a032604451d8e94bb59015eb/Screenshot%202024-11-06%20234410.png)
  4- Inserting a Neq Patient:
 
  		INSERT INTO patients (patient_name, doctor_name, diagnosis, phone_no, admit_date, discharge_date, gender, address)
