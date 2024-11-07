@@ -123,6 +123,12 @@
 
 ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4457b17db862d4a04d84e14241b5605e999f13fa/Output/full%20join%20-%20Copy.png)
 
+
+15 -The DROP DATABASE statment is used to drop an existing SQL database.
+
+      DROP DATABASE databasename;
+    
+
     
      
 
