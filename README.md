@@ -30,32 +30,99 @@
 ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4e3cc7ec349f5668a032604451d8e94bb59015eb/Screenshot%202024-11-06%20234410.png)
  4- Inserting a New Patient:
 
- 		INSERT INTO patients (patient_name, doctor_name, diagnosis, phone_no, admit_date, discharge_date, gender, address)
-			VALUES ('Aryan Singh', 'Dr. Patel', 'Malaria', '9876543210', '2023-11-06', '2023-11-08', 'Male', 'New Delhi, India'),
-    				('Aisha Khan', 'Dr. Sharma', 'Dengue Fever', '9876543211', '2023-11-07', '2023-11-09', 'Female', 'Mumbai, Maharashtra, India'),
-    				('Ravi Kumar', 'Dr. Gupta', 'Tuberculosis', '9876543212', '2023-11-08', '2023-11-10', 'Male', 'Kolkata, West Bengal, India'),
-    				('Priya Patel', 'Dr. Nair', 'Typhoid', '9876543213', '2023-11-09', '2023-11-11', 'Female', 'Chennai, Tamil Nadu, India'),
-    				('Rohan Sharma', 'Dr. Iyer', 'Diabetes', '9876543214', '2023-11-10', '2023-11-12', 'Male', 'Bangalore, Karnataka, India');
+		
+        INSERT INTO patients (patient_name, doctor_name, diagnosis, phone_no, admit_date, discharge_date, gender, address)
+	VALUES
+			    ('Aryan Singh', 'Dr. Patel', 'Malaria', '9876543210', '2023-11-06', '2023-11-08', 'Male', 'New Delhi, India'),
+			    ('Aisha Khan', 'Dr. Sharma', 'Dengue Fever', '9876543211', '2023-11-07', '2023-11-09', 'Female', 'Mumbai, Maharashtra, India'),
+			    ('Ravi Kumar', 'Dr. Gupta', 'Tuberculosis', '9876543212', '2023-11-08', '2023-11-10', 'Male', 'Kolkata, West Bengal, India'),
+			    ('Priya Patel', 'Dr. Nair', 'Typhoid', '9876543213', '2023-11-09', '2023-11-11', 'Female', 'Chennai, Tamil Nadu, India'),
+			    ('Rohan Sharma', 'Dr. Iyer', 'Diabetes', '9876543214', '2023-11-10', '2023-11-12', 'Male', 'Bangalore, Karnataka, India'),
+			    ('Neha Gupta', 'Dr. Singh', 'Heart Disease', '9876543215', '2023-11-11', '2023-11-13', 'Female', 'Hyderabad, Telangana, India'),
+			    ('Amit Kumar', 'Dr. Sharma', 'Kidney Stones', '9876543216', '2023-11-12', '2023-11-14', 'Male', 'Pune, Maharashtra, India'),
+			    ('Anika Patel', 'Dr. Nair', 'Asthma', '9876543217', '2023-11-13', '2023-11-15', 'Female', 'Ahmedabad, Gujarat, India'),
+		    ('Rahul Sharma', 'Dr. Gupta', 'Depression', '9876543218', '2023-11-14', '2023-11-16', 'Male', 'Jaipur, Rajasthan, India'),
+		    ('Rani Singh', 'Dr. Patel', 'Anxiety', '9876543219', '2023-11-15', '2023-11-17', 'Female', 'Lucknow, Uttar Pradesh, India');
+
+
+
+
 
  5- Select Query (Retrieving All Patients data)
 
      SELECT *FROM patients;
+ ![image alt]
 6- Retrieving Patients by Doctor Name
 
      SELECT * From patients WHERE doctor_name='Dr.Patel';
+ ![image alt]
 7-Retrieving Patients Admitted on a Specific Date
 
     SELECT * FROM patients WHERE admit_date = '2023-11-06;
+![image alt]
 8- Retrieving Patients Discharged Between Two Dates
 
     SELECT * FROM patients WHERE discharge_date BETWEEN '2023-11-01' AND '2023-11-10';
+   ![image alt]
 
 9- Updating a Patient's Phone Number
 
     UPDATE patients SET phone_no = '987-654-3210' WHERE patient_id = 1;
+   ![image alt]
 10-  Deleting a Patient
 
     DELETE FROM patients WHERE patient_id = 2;
+   ![image alt]
+
+#For performing Join Queries We need to build another table like doctor1 and insert values
+
+      CREATE TABLE doctors1 (
+    doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_name VARCHAR(100),
+    specialization VARCHAR(100));
+
+    INSERT INTO doctors1 (doctor_name, specialization)
+	VALUES
+   	 ('Dr. Patel', 'General Physician',5),
+   	 ('Dr. Sharma', 'Cardiologist',8),
+   	 ('Dr. Gupta', 'Pediatrician',9),
+	('Dr. Nair', 'Dermatologist',10),
+    	('Dr. Iyer', 'Orthopedician',7);
+
+  ![image alt]
+11 - Inner Join: (Retrieve patients and their corresponding doctor details):
+
+	SELECT p.patient_name, d.doctor_name, p.diagnosis
+	FROM patients p
+	INNER JOIN doctors1 d ON p.doctor_name = d.doctor_name;
+ ![image alt]
+12- Left Join:Retrieve all patients, even if they don't have a corresponding doctor:
+
+	  SELECT p.patient_name, d.doctor_name
+	  FROM patients p
+          LEFT JOIN doctors1 d ON p.doctor_name = d.doctor_name;
+   ![image alt]
+13-   Right Join:Retrieve all doctors, even if they don't have any patients:
+
+	 SELECT p.patient_name, d.doctor_name
+	 FROM patients p
+	 RIGHT JOIN doctors1 d ON p.doctor_name = d.doctor_name;
+![image alt]
+14- Full Outer Join:Retrieve all patients and doctors, combining matching and non-matching rows: 
+
+	  SELECT p.patient_name, d.doctor_name,p.gender,p.diagnosis,p.admit_date
+		from patients p
+		Left Join doctors1 d ON p.patient_name=d.doctor_name
+		UNION
+		select p.patient_name, d.doctor_name,p.gender,p.diagnosis,p.admit_date
+		from patients p
+		right Join doctors1 d ON p.patient_name=d.doctor_name
+
+
+![image alt]
+
+    
+     
 
   
 
