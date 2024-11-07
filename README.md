@@ -61,16 +61,16 @@
 7-Retrieving Patients Admitted on a Specific Date
 
     SELECT * FROM patients WHERE admit_date = '2023-11-06;
-![image alt]
+![image alt](https://github.com/amanrawa/MySQL-lesson/blob/f66193b7e589c43f499ca8c6f523663fb1e948eb/Output/Date%20-%20Copy.png)
 8- Retrieving Patients Discharged Between Two Dates
 
     SELECT * FROM patients WHERE discharge_date BETWEEN '2023-11-01' AND '2023-11-10';
-   ![image alt]
+   ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/f66193b7e589c43f499ca8c6f523663fb1e948eb/Output/Discharge%20Date%20between%20-%20Copy.png)
 
 9- Updating a Patient's Phone Number
 
     UPDATE patients SET phone_no = '987-654-3210' WHERE patient_id = 1;
-   ![image alt]
+   ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/f66193b7e589c43f499ca8c6f523663fb1e948eb/Output/Update%20phone%20no..png)
 10-  Deleting a Patient
 
     DELETE FROM patients WHERE patient_id = 2;
@@ -91,25 +91,25 @@
 	('Dr. Nair', 'Dermatologist',10),
     	('Dr. Iyer', 'Orthopedician',7);
 
-  ![image alt]
+  ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/3bcc4d25001c122131e14fbd2119f943a7599034/Output/create%20doctor.png)
 11 - Inner Join: (Retrieve patients and their corresponding doctor details):
 
 	SELECT p.patient_name, d.doctor_name, p.diagnosis
 	FROM patients p
 	INNER JOIN doctors1 d ON p.doctor_name = d.doctor_name;
- ![image alt]
+ ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4457b17db862d4a04d84e14241b5605e999f13fa/Output/inner%20join.png)
 12- Left Join:Retrieve all patients, even if they don't have a corresponding doctor:
 
 	  SELECT p.patient_name, d.doctor_name
 	  FROM patients p
           LEFT JOIN doctors1 d ON p.doctor_name = d.doctor_name;
-   ![image alt]
+   ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4457b17db862d4a04d84e14241b5605e999f13fa/Output/left%20join.png)
 13-   Right Join:Retrieve all doctors, even if they don't have any patients:
 
 	 SELECT p.patient_name, d.doctor_name
 	 FROM patients p
 	 RIGHT JOIN doctors1 d ON p.doctor_name = d.doctor_name;
-![image alt]
+![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4457b17db862d4a04d84e14241b5605e999f13fa/Output/Right%20join.png)
 14- Full Outer Join:Retrieve all patients and doctors, combining matching and non-matching rows: 
 
 	  SELECT p.patient_name, d.doctor_name,p.gender,p.diagnosis,p.admit_date
@@ -121,7 +121,7 @@
 		right Join doctors1 d ON p.patient_name=d.doctor_name
 
 
-![image alt]
+![image alt](https://github.com/amanrawa/MySQL-lesson/blob/4457b17db862d4a04d84e14241b5605e999f13fa/Output/full%20join%20-%20Copy.png)
 
     
      
