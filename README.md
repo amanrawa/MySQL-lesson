@@ -44,6 +44,7 @@
 		    ('Rahul Sharma', 'Dr. Gupta', 'Depression', '9876543218', '2023-11-14', '2023-11-16', 'Male', 'Jaipur, Rajasthan, India'),
 		    ('Rani Singh', 'Dr. Patel', 'Anxiety', '9876543219', '2023-11-15', '2023-11-17', 'Female', 'Lucknow, Uttar Pradesh, India');
 
+ ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/0b681f7465fc12c84b1b3c4c4446cd4a5937dc8f/Output/insert%20patients%20values.png)
 
 
 
@@ -51,11 +52,12 @@
  5- Select Query (Retrieving All Patients data)
 
      SELECT *FROM patients;
- ![image alt]
+ ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/0b681f7465fc12c84b1b3c4c4446cd4a5937dc8f/Output/Select.png)
+ 
 6- Retrieving Patients by Doctor Name
 
      SELECT * From patients WHERE doctor_name='Dr.Patel';
- ![image alt]
+ ![image alt](https://github.com/amanrawa/MySQL-lesson/blob/0b681f7465fc12c84b1b3c4c4446cd4a5937dc8f/Output/Select%20by%20doctor%20name.png)
 7-Retrieving Patients Admitted on a Specific Date
 
     SELECT * FROM patients WHERE admit_date = '2023-11-06;
